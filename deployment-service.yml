@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tetris
+  namespace: testns
 spec:
   replicas: 2
   selector:
@@ -32,3 +33,9 @@ spec:
     port: 80                 # Expose port 80
     targetPort: 3000
   type: LoadBalancer
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: testns
